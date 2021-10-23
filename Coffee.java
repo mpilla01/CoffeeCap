@@ -26,11 +26,56 @@ public class Coffee {
         return size;
     }
 
-    public ArrayList getDrinksList() {
+    public static ArrayList<Coffee> getDrinksList() {
         return DRINKS;
     }
 
-    //
+
+    //setters
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setCaffeine(int caffeine) {
+        this.caffeine = caffeine;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other != null && other instanceof Coffee) {
+            Coffee cOther = (Coffee) other;
+            if (this.type.equals(cOther.type) 
+                && this.caffeine == cOther.caffeine
+                && this.size == cOther.size) {
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    
+    //arraylist drinks modifiers
+    public boolean checkDrink(Coffee c) {
+        for (int i = 0; i < DRINKS.size(); i++) {
+            if(c.equals(DRINKS.get(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addDrink(Coffee c) {
+        if (!checkDrink(c)) {
+            DRINKS.add(c);
+        }
+    }
+
+
+
 
 
 }
