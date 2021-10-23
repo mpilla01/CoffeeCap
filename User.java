@@ -12,6 +12,7 @@ public class User {
         this.consumedList = consumedList;
         this.favorites = favorites;
         this.points = points;
+        
     }
 
     public String getName() {

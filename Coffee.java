@@ -4,22 +4,23 @@ public class Coffee {
     private String type;
     private int caffeine; // measured in mg
     private int size; // measured in oz
-    
     static Coffee c1 = new Coffee("Brewed Coffee", 95, 8);
     static Coffee c2 = new Coffee("Espresso", 64, 1);
     static Coffee c3 = new Coffee("Instant Coffee", 62, 8);
     static Coffee c4 = new Coffee("Brewed Decaf Coffee", 2, 8);
     private static ArrayList<Coffee> DRINKS = new ArrayList<Coffee>(); //TODO: add drinks to array
-    DRINKS.add(c1);
-    DRINKS.add(c2);
-    DRINKS.add(c3);
-    DRINKS.add(c4);
-    
+
     //constructor
     public Coffee(String type, int caffeine, int size){
         this.type = type;
         this.caffeine = caffeine;
         this.size = size;
+        if (DRINKS.size() == 0) {
+            DRINKS.add(c1);
+            DRINKS.add(c2);
+            DRINKS.add(c3);
+            DRINKS.add(c4);
+        }
     }
 
     //getters
