@@ -10,8 +10,10 @@ public class Recommendations {
     public Recommendations(User person) {
         this.person = person;
         this.caffeineLeft = CAFFEINE_LIMIT - person.getCaffeineIntake();
-        firstRec = createFirstRec();
-        secondRec = createSecondRec();
+        if (this.caffeineLeft > 0) {
+            firstRec = createFirstRec();
+            secondRec = createSecondRec();
+        }
     }
 
     private ArrayList<Coffee> createFirstRec() { //TODO: do something when nothing meets the requirements
@@ -98,7 +100,4 @@ public class Recommendations {
     public void addCaffeine(Coffee type) {
         person.setCaffeineIntake(person.getCaffeineIntake() + type.getCaffeine());
     }
-
-
-
 }
