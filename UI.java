@@ -53,20 +53,20 @@ public class UI {
         }
         else {
             if ((int)choice == 1) {
-                int index = (int)((choice - (int)(choice)) * 10);
+                int index = ((int)((choice - (int)(choice)) * 10)) - 1;
                 while (!(index < recs.getFirstRec().size())) {
                     System.out.println("Please input a valid drink choice (i.e. 1.1): "); 
                     choice = input.nextDouble();
-                    index = (int)((choice - (int)(choice)) * 10) - 1;
+                    index = ((int)((choice - (int)(choice)) * 10)) - 1;
                 }
                 recs.selectDrink(recs.getFirstRec().get(index));
             }
             else if ((int)choice == 2) {
-                int index = (int)((choice - (int)(choice)) * 10);
+                int index = ((int)((choice - (int)(choice)) * 10)) - 1;
                 while (!(index < recs.getFirstRec().size())) {
                     System.out.println("Please input a valid drink choice (i.e. 2.1): "); 
                     choice = input.nextDouble(); 
-                    index = (int)((choice - (int)(choice)) * 10) - 1;
+                    index = ((int)((choice - (int)(choice)) * 10)) - 1;
                 }
                 recs.selectDrink(recs.getSecondRec().get(index));
             }
