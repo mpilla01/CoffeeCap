@@ -7,9 +7,8 @@ public class User {
     private int points;
     private int caffeineIntake;
     
-    public User(String name, ArrayList<Coffee> consumedList, int points) {
+    public User(String name, int points) {
         this.name = name;
-        this.consumedList = consumedList;
         this.points = points;
     }
 
