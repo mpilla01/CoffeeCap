@@ -65,18 +65,5 @@ public class User {
     public void setCaffeineIntake(int caffeineIntake) {
         this.caffeineIntake = caffeineIntake;
     }
-
-    public void selectDrink(Coffee c) {
-        if (Coffee.getDrinksList().contains(c)) {
-            addCaffeine(c);
-        }
-        else {
-            Coffee.addDrink(c);
-            addCaffeine(c);
-        }
-    }
-
-    public void addCaffeine(Coffee name) {
-        caffeineIntake += name.getCaffeine();
-    }
+    
 }
