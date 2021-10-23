@@ -13,6 +13,8 @@ public class Recommendations {
         if (this.caffeineLeft > 0) {
             firstRec = createFirstRec();
             secondRec = createSecondRec();
+        } else {
+            System.out.println("Drink wisely!");
         }
     }
 
