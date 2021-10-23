@@ -15,12 +15,13 @@ public class Coffee {
         this.type = type;
         this.caffeine = caffeine;
         this.size = size;
-        if (DRINKS.size() == 0) {
-            DRINKS.add(c1);
-            DRINKS.add(c2);
-            DRINKS.add(c3);
-            DRINKS.add(c4);
-        }
+    }
+
+    public static void addData() {
+        Coffee.addDrink(c1);
+        Coffee.addDrink(c2);
+        Coffee.addDrink(c3);
+        Coffee.addDrink(c4);
     }
 
     //getters
