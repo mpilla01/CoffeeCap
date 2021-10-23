@@ -7,12 +7,20 @@ public class User {
     private int points;
     private int caffeineIntake;
     
-    public User(String name, ArrayList<Coffee> consumedList, ArrayList<Coffee> favorites, int points) {
+    public User(String name, ArrayList<Coffee> consumedList, int points) {
         this.name = name;
         this.consumedList = consumedList;
-        this.favorites = favorites;
         this.points = points;
-        
+    }
+
+    public void addToFavorites(Coffee c) {
+        if (!(favorites.contains(c))) {
+            favorites.add(c);
+            System.out.println("Got it! " + c.getType() + " is now in your favorites.");
+        }
+        else {
+            System.out.println(c.getType() + " has already been added to your favorites!");
+        }
     }
 
     public String getName() {
