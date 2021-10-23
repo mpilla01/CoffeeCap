@@ -59,7 +59,7 @@ public class Coffee {
 
     
     //arraylist drinks modifiers
-    public boolean checkDrink(Coffee c) {
+    public static boolean checkDrink(Coffee c) {
         for (int i = 0; i < DRINKS.size(); i++) {
             if(c.equals(DRINKS.get(i))) {
                 return true;
@@ -68,7 +68,7 @@ public class Coffee {
         return false;
     }
 
-    public void addDrink(Coffee c) {
+    public static void addDrink(Coffee c) {
         if (!checkDrink(c)) {
             DRINKS.add(c);
         }
