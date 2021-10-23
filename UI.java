@@ -13,16 +13,58 @@ public class UI {
 
     public void displayRecs() {
         recs = new Recommendations(person);
-        System.out.println("Here is a list of recommended drinks: ");
-        System.out.println();
-        System.out.println("First level (100 pts): ");
-        recs.printArray(recs.getFirstRec(), 1);
-        System.out.println();
-        System.out.println("Second level (50 pts): ");
-        recs.printArray(recs.getSecondRec(), 2);
-        System.out.println();
-        System.out.println("Input a new drink #0");
-        System.out.println();
+        if (recs.getFirstRec() == null && recs.getSecondRec() == null) {
+            System.out.println("There are no recommended drinks left!");
+            System.out.println("Input a new drink #0");
+            System.out.println();
+        } else if (recs.getFirstRec() == null) {
+            System.out.println("Here is a list of recommended drinks: ");
+            System.out.println();
+            System.out.println("Second level (50 pts): ");
+            recs.printArray(recs.getSecondRec(), 2);
+            System.out.println();
+            System.out.println("Input a new drink #0");
+            System.out.println();
+        } else if (recs.getSecondRec() == null) {
+            System.out.println("Here is a list of recommended drinks: ");
+            System.out.println();
+            System.out.println("First level (100 pts): ");
+            recs.printArray(recs.getFirstRec(), 1);
+            System.out.println();
+            System.out.println("Input a new drink #0");
+            System.out.println();
+        } else {
+            System.out.println("Here is a list of recommended drinks: ");
+            System.out.println();
+            System.out.println("First level (100 pts): ");
+            recs.printArray(recs.getFirstRec(), 1);
+            System.out.println();
+            System.out.println("Second level (50 pts): ");
+            recs.printArray(recs.getSecondRec(), 2);
+            System.out.println();
+            System.out.println("Input a new drink #0");
+            System.out.println();
+        }
+    }
+
+    public void inputValid(double choice) {
+        int index = ((int)((choice - (int)(choice)) * 10)) - 1;
+        if ((int)choice == 1) {
+            while (!(index < recs.getFirstRec().size())) {
+                System.out.println("Please input a valid drink choice (i.e. 1.1): "); 
+                choice = input.nextDouble();
+                inputValid(choice);
+            }
+            recs.selectDrink(recs.getFirstRec().get(index));
+        }
+        if ((int)choice == 2) {
+            while (!(index < recs.getSecondRec().size())) {
+                System.out.println("Please input a valid drink choice (i.e. 2.1): "); 
+                choice = input.nextDouble(); 
+                inputValid(choice);
+            }
+            recs.selectDrink(recs.getSecondRec().get(index));
+        }
     }
 
     public void inputChoice() {
@@ -52,24 +94,7 @@ public class UI {
             recs.selectDrink(addition);
         }
         else {
-            if ((int)choice == 1) {
-                int index = ((int)((choice - (int)(choice)) * 10)) - 1;
-                while (!(index < recs.getFirstRec().size())) {
-                    System.out.println("Please input a valid drink choice (i.e. 1.1): "); 
-                    choice = input.nextDouble();
-                    index = ((int)((choice - (int)(choice)) * 10)) - 1;
-                }
-                recs.selectDrink(recs.getFirstRec().get(index));
-            }
-            else if ((int)choice == 2) {
-                int index = ((int)((choice - (int)(choice)) * 10)) - 1;
-                while (!(index < recs.getFirstRec().size())) {
-                    System.out.println("Please input a valid drink choice (i.e. 2.1): "); 
-                    choice = input.nextDouble(); 
-                    index = ((int)((choice - (int)(choice)) * 10)) - 1;
-                }
-                recs.selectDrink(recs.getSecondRec().get(index));
-            }
+            inputValid(choice);
         }
 
         System.out.println();
