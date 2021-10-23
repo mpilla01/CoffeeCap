@@ -19,13 +19,15 @@ public class Recommendations {
         ArrayList<Coffee> meetReqsReg = new ArrayList<Coffee>();
         ArrayList<Coffee> meetReqs = new ArrayList<Coffee>();
 
-        for(int i = 0; i < Coffee.getDrinksList().size(); i++) {
-            Coffee c = Coffee.getDrinksList().get(i);
-            if (c.getCaffeine() <= (caffeineLeft/2.0) && person.getFavorites().contains(c)) {
-                meetReqsFav.add(c);
-            }
-            else if(c.getCaffeine() <= (caffeineLeft/2.0)) {
-                meetReqsReg.add(c);
+        if(!Coffee.getDrinksList().contains(null)) {
+            for(int i = 0; i < Coffee.getDrinksList().size(); i++) {
+                Coffee c = Coffee.getDrinksList().get(i);
+                if (c.getCaffeine() <= (caffeineLeft/2.0) && person.getFavorites().contains(c)) {
+                    meetReqsFav.add(c);
+                }
+                else if(c.getCaffeine() <= (caffeineLeft/2.0)) {
+                    meetReqsReg.add(c);
+                }
             }
         }
         meetReqs.addAll(meetReqsFav);

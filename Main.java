@@ -5,8 +5,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.print("Good morning! What is your name? ");
         String name = input.nextLine();
-        input.nextLine();
-        User person = new User(name, 0);
+        User person = new User(name, 0); /* 
         Recommendations recs = new Recommendations(person);
         System.out.println("Here is a list of recommended drinks: ");
         System.out.println();
@@ -112,7 +111,7 @@ public class Main {
             System.out.println("Please press any other key to continue using CoffeeCap!"); 
         }
 
-        
+        */
 
         
 
