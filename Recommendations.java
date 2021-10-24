@@ -44,12 +44,14 @@ public class Recommendations {
         ArrayList<Coffee> meetReqsReg = new ArrayList<Coffee>();
         ArrayList<Coffee> meetReqs = new ArrayList<Coffee>();
 
-        for(int i = 0; i < Coffee.getDrinksList().size(); i++) {
-            Coffee c = Coffee.getDrinksList().get(i);
-            if (!(firstRec.contains(c)) && (c.getCaffeine() <= (caffeineLeft) && person.getFavorites().contains(c))) {
-                meetReqsFav.add(c);
-            } else if(!(firstRec.contains(c)) && c.getCaffeine() <= (caffeineLeft)) {
-                meetReqsReg.add(c);
+        if(!Coffee.getDrinksList().contains(null)) {
+            for(int i = 0; i < Coffee.getDrinksList().size(); i++) {
+                Coffee c = Coffee.getDrinksList().get(i);
+                if (!(firstRec.contains(c)) && (c.getCaffeine() <= (caffeineLeft) && person.getFavorites().contains(c))) {
+                    meetReqsFav.add(c);
+                } else if(!(firstRec.contains(c)) && c.getCaffeine() <= (caffeineLeft)) {
+                    meetReqsReg.add(c);
+                }
             }
         }
         meetReqs.addAll(meetReqsFav);
@@ -75,7 +77,7 @@ public class Recommendations {
         int i = 0;
         for (Coffee c : cArr) {
             i++;
-            System.out.println(c.getType() + " with caffeine content of " + c.getCaffeine() + "mg. #" + levelNum + "." + i);
+            System.out.println(levelNum + "." + i + " ~~ " + c.getType() + " with caffeine content of " + c.getCaffeine() + "mg.");
         }
     }
 

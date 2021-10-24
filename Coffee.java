@@ -35,6 +35,15 @@ public class Coffee {
         Coffee.addDrink(c2);
         Coffee.addDrink(c3);
         Coffee.addDrink(c4);
+        Coffee.addDrink(stb1);
+        Coffee.addDrink(stb2);
+        Coffee.addDrink(stb3);
+        Coffee.addDrink(stb4);
+        Coffee.addDrink(stb5);
+        Coffee.addDrink(stb6);
+        Coffee.addDrink(stb7);
+        Coffee.addDrink(stb8);
+        Coffee.addDrink(stb9);
     }
 
     //getters
