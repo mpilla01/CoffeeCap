@@ -92,13 +92,21 @@ public class Recommendations {
             addCaffeine(c);
             person.setConsumedList(c);
         }
-        caffeineLeft -= c.getCaffeine();
         if (firstRec.contains(c)) {
             person.addPoints(100);
         }
         else if(secondRec.contains(c)) {
             person.addPoints(50);
         }
+        else {
+            if(c.getCaffeine() < (caffeineLeft / 2.0)) {
+                person.addPoints(100);
+            }
+            else if(c.getCaffeine() < caffeineLeft){
+                person.addPoints(50);
+            }
+        }
+        caffeineLeft -= c.getCaffeine();
     }
 
     public void addCaffeine(Coffee type) {
