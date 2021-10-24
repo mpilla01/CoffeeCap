@@ -99,6 +99,7 @@ public class UI {
 
         System.out.println();
         System.out.println("Thank you for inputting your choice! Your caffeine limit left is: " + recs.getCaffeineLeft());
+        System.out.println("Your current points are: " + person.getPoints());
         System.out.println("Please press 0 to exit CoffeeCap!");
         System.out.println("Please press any other key to continue using CoffeeCap!");
         String cont = input.next();
