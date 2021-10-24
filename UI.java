@@ -1,7 +1,4 @@
 import java.util.Scanner;
-import java.util.regex.Pattern;
-
-import javax.sound.sampled.LineEvent.Type;
 
 public class UI {
     public User person;
@@ -94,7 +91,6 @@ public class UI {
     }
 
     public void inputChoice() {
-        Coffee addition;
         System.out.print("Please select the number associated with your coffee from your recommended lists: ");
         boolean validChoice = input.hasNextDouble();
         while (!validChoice && input.nextDouble() != 0) {
