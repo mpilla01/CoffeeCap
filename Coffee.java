@@ -4,10 +4,23 @@ public class Coffee {
     private String type;
     private int caffeine; // measured in mg
     private int size; // measured in oz
-    static Coffee c1 = new Coffee("Brewed Coffee", 250, 8);
+    static Coffee c1 = new Coffee("Brewed Coffee", 95, 8);
     static Coffee c2 = new Coffee("Espresso", 64, 1);
-    static Coffee c3 = new Coffee("Instant Coffee", 320, 8);//TODO: change this and brewed coffee's caffeine intake back to its actual values
+    static Coffee c3 = new Coffee("Instant Coffee", 62, 8);//TODO: change this and brewed coffee's caffeine intake back to its actual values
     static Coffee c4 = new Coffee("Brewed Decaf Coffee", 2, 8);
+    static Coffee stb1 = new Coffee("Caffe Americano", 150, 12);
+    static Coffee stb2 = new Coffee("Blonde Roast", 270, 12);
+    static Coffee stb3 = new Coffee("Cappuccino", 150, 16);
+    static Coffee stb4 = new Coffee("Flat White", 130, 12);
+    static Coffee stb5 = new Coffee("Caffe Latte", 75, 12);
+    static Coffee stb6 = new Coffee("Caramel Macchiato", 75, 12);
+    static Coffee stb7 = new Coffee("Caffe Latte", 75, 12);
+    static Coffee stb8 = new Coffee("Caffe Mocha", 95, 12);
+    static Coffee stb9 = new Coffee("White Chocolate Mocha", 75, 12);
+
+    
+
+
     private static ArrayList<Coffee> DRINKS = new ArrayList<Coffee>(); //TODO: add drinks to array
 
     //constructor
