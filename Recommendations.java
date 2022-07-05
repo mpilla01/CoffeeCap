@@ -3,13 +3,13 @@ import java.util.ArrayList;
 public class Recommendations {
     private final int CAFFEINE_LIMIT = 400;
     private int caffeineLeft;
-    public User person;
+    private User person;
     private ArrayList<Coffee> firstRec;
     private ArrayList<Coffee> secondRec;
 
     public Recommendations(User person) {
         this.person = person;
-        this.caffeineLeft = CAFFEINE_LIMIT - person.getCaffeineIntake();
+        this.caffeineLeft = CAFFEINE_LIMIT - this.person.getCaffeineIntake();
         if (this.caffeineLeft > 0) {
             firstRec = createFirstRec();
             secondRec = createSecondRec();

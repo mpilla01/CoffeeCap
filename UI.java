@@ -10,12 +10,12 @@ public class UI {
         System.out.println("Good morning!");
         System.out.print("What is your name? ");
         String name = input.nextLine();
-        person = new User(name, 0);
+        this.person = new User(name, 0);
         System.out.println("Hello, " + person.getName() + "!");
+        this.recs = new Recommendations(this.person);
     }
 
     public void displayRecs() {
-        recs = new Recommendations(person);
         if (recs.getFirstRec() == null && recs.getSecondRec() == null) {
             System.out.println("There are no recommended drinks left!");
             System.out.println("Input a new drink #0");
@@ -113,7 +113,7 @@ public class UI {
             int size = input.nextInt();
             input.nextLine();
 
-            drinkChoice = new Coffee(type, cAmount, size);
+            Coffee drinkChoice = new Coffee(type, cAmount, size);
             recs.selectDrink(drinkChoice);
         }
         else {
